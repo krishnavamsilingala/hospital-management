@@ -1,0 +1,93 @@
+<!--<div class="container">-->
+<!--  <div class="row justify-content-center mt-4">-->
+<!--    <div class="col-md-6">-->
+<!--      <div class="card">-->
+<!--        <div class="card-header">-->
+<!--          <h3 class="display-5 text-center">Patient Registration</h3>-->
+<!--        </div>-->
+<!--        <div class="card-body">-->
+<!--          <form [formGroup]="patientForm" (ngSubmit)="onSubmit()" autocomplete="off">-->
+<!--            <div class="mb-3">-->
+<!--              <label for="name" class="form-label">Name</label>-->
+<!--              <input type="text" class="form-control" id="name" formControlName="name" />-->
+<!--              <div *ngIf="patientForm.get('name')?.invalid && (patientForm.get('name')?.touched || submitted)" class="text-danger">-->
+<!--                Name is required-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="mb-3">-->
+<!--              <label for="email" class="form-label">Email</label>-->
+<!--              <input type="text" class="form-control" id="email" formControlName="email" />-->
+<!--              <div *ngIf="patientForm.get('email')?.invalid && (patientForm.get('email')?.touched || submitted)" class="text-danger">-->
+<!--                Email is required-->
+<!--              </div>-->
+<!--              <div *ngIf="patientForm.get('email')?.hasError('email') && patientForm.get('email')?.touched" class="text-danger">-->
+<!--                Enter a valid email address-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="mb-3">-->
+<!--              <label for="address" class="form-label">Address</label>-->
+<!--              <input type="text" class="form-control" id="address" formControlName="address" />-->
+<!--            </div>-->
+<!--            <div class="mb-3">-->
+<!--              <label for="phone" class="form-label">Phone</label>-->
+<!--              <input type="text" class="form-control" id="phone" formControlName="phone" />-->
+<!--            </div>-->
+<!--            <div class="text-end">-->
+<!--              <button type="submit" class="btn btn-success">Register</button>-->
+<!--              <button type="reset" class="btn btn-danger ms-2" (click)="resetForm()">Reset</button>-->
+<!--            </div>-->
+<!--          </form>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<div class="container">
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="display-5 text-center">Patient Registration</h3>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="patientForm" (ngSubmit)="onSubmit()" autocomplete="off">
+            <div class="mb-3">
+              <label for="ssn" class="form-label">SSN</label>
+              <input type="number" class="form-control" id="ssn" formControlName="ssn" />
+            </div>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" formControlName="name" />
+              <div *ngIf="patientForm.get('name')?.invalid && (patientForm.get('name')?.touched || submitted)" class="text-danger">
+                Name is required
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="address" class="form-label">Address</label>
+              <input type="text" class="form-control" id="address" formControlName="address" />
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone</label>
+              <input type="text" class="form-control" id="phone" formControlName="phone" />
+            </div>
+            <div class="mb-3">
+              <label for="insuranceid" class="form-label">Insurance ID</label>
+              <input type="number" class="form-control" id="insuranceid" formControlName="insuranceid" />
+            </div>
+            <div class="mb-3">
+              <label for="pcp" class="form-label">PCP</label>
+              <input type="number" class="form-control" id="pcp" formControlName="pcp" />
+            </div>
+            <div class="text-end">
+              <button type="submit" class="btn btn-success">Register</button>
+              <button type="reset" class="btn btn-danger ms-2" (click)="resetForm()">Reset</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,43 @@
+<!--&lt;!&ndash; HTML for Parent Patient Component &ndash;&gt;-->
+<!--<div class="container mt-4">-->
+<!--  <ul class="nav nav-tabs" role="tablist">-->
+<!--    <li class="nav-item" role="presentation">-->
+<!--      <button class="nav-link active" id="createPatient-tab" data-bs-toggle="tab" data-bs-target="#createPatient" type="button" role="tab" aria-controls="createPatient" aria-selected="true">Create Patient</button>-->
+<!--    </li>-->
+<!--    <li class="nav-item" role="presentation">-->
+<!--      <button class="nav-link" id="viewPatients-tab" data-bs-toggle="tab" data-bs-target="#viewPatients" type="button" role="tab" aria-controls="viewPatients" aria-selected="false">View Patients</button>-->
+<!--    </li>-->
+<!--&lt;!&ndash;    <li class="nav-item" role="presentation">&ndash;&gt;-->
+<!--&lt;!&ndash;      <button class="nav-link" id="updatePatient-tab" data-bs-toggle="tab" data-bs-target="#updatePatient" type="button" role="tab" aria-controls="updatePatient" aria-selected="false">Update Patient</button>&ndash;&gt;-->
+<!--&lt;!&ndash;    </li>&ndash;&gt;-->
+<!--  </ul>-->
+
+<!--  <div class="tab-content mt-4">-->
+<!--    &lt;!&ndash; Create Patient Tab &ndash;&gt;-->
+<!--    <div class="tab-pane fade show active" id="createPatient" role="tabpanel" aria-labelledby="createPatient-tab">-->
+<!--      &lt;!&ndash; Include Create Patient Component &ndash;&gt;-->
+<!--      <app-create-patient></app-create-patient>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; View Patients Tab &ndash;&gt;-->
+<!--    <div class="tab-pane fade show active" id="viewPatients" role="tabpanel" aria-labelledby="viewPatients-tab">-->
+<!--      &lt;!&ndash; Include View Patients Component &ndash;&gt;-->
+<!--      <app-view-patient></app-view-patient>-->
+<!--    </div>-->
+
+<!--&lt;!&ndash;    &lt;!&ndash; Update Patient Tab &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <div class="tab-pane fade" id="updatePatient" role="tabpanel" aria-labelledby="updatePatient-tab">&ndash;&gt;-->
+<!--&lt;!&ndash;      &lt;!&ndash; Include Update Patient Component &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;      <app-update-patient></app-update-patient>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--  </div>-->
+<!--</div>-->
+
+<div class="container mt-4">
+  <div>
+    <button (click)="navigateTo('create')">Create Patient</button>
+    <button (click)="navigateTo('view')">View Patients</button>
+  </div>
+
+  <router-outlet></router-outlet>
+</div>
