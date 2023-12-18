@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,9 @@ import { CreatePatientComponent } from './create-patient/create-patient.componen
 import { ViewPatientComponent } from './view-patient/view-patient.component';
 import { UpdatePatientComponent } from './update-patient/update-patient.component';
 import { CreatePhysicianComponent } from './create-physician/create-physician.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { ViewPhysicianComponent } from './view-physician/view-physician.component';
+import { UpdatePhysicianComponent } from './update-physician/update-physician.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +26,16 @@ import { CreatePhysicianComponent } from './create-physician/create-physician.co
     CreatePatientComponent,
     ViewPatientComponent,
     UpdatePatientComponent,
-    CreatePhysicianComponent
+    CreatePhysicianComponent,
+    LoginPageComponent,
+    ViewPhysicianComponent,
+    UpdatePhysicianComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     MatTabsModule,
+    FormsModule,
     ReactiveFormsModule,
     AppRoutingModule
   ],

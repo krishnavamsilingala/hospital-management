@@ -12,4 +12,8 @@ export class AppComponent {
    navigateTo(route: string) {
       this.router.navigate([route]);
     }
+    logout(){
+    localStorage.setItem('token','');
+    this.router.navigate(['login']);
+    }
 }

@@ -1,0 +1,27 @@
+<div class="container mt-4" *ngIf="physician">
+  <h2>Update Physician</h2>
+
+  <div class="mb-3">
+    <label for="empId" class="form-label">Employee ID</label>
+    <input type="text" class="form-control" id="empId" [(ngModel)]="physician.employeeid" disabled />
+  </div>
+
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" class="form-control" id="name" [(ngModel)]="physician.name" />
+    <button class="btn btn-primary mt-3" (click)="updateName()">Update Name</button>
+  </div>
+
+  <div class="mb-3">
+    <label for="position" class="form-label">Position</label>
+    <input type="text" class="form-control" id="position" [(ngModel)]="physician.position" />
+    <button class="btn btn-primary mt-3" (click)="updatePosition()">Update Position</button>
+  </div>
+
+  <div class="mb-3">
+    <label for="ssn" class="form-label">SSN</label>
+    <input type="text" class="form-control" id="ssn" [(ngModel)]="physician.ssn" />
+    <button class="btn btn-primary mt-3" (click)="updateSSN()">Update SSN</button>
+  </div>
+  <!-- Add more fields and update buttons for additional details if needed -->
+</div>

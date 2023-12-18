@@ -12,6 +12,39 @@
 
 <div class="container mt-4">
   <h2>View Patients</h2>
+  <div class="row mb-3">
+    <div class="col-md-4">
+      <select class="form-select" [(ngModel)]="selectedFilter">
+        <option value="pcp">Filter by PCP</option>
+        <option value="ssnAndPcp">Filter by SSN & PCP</option>
+        <option value="insuranceBySSN">Filter Insurance by SSN</option>
+      </select>
+    </div>
+    <div class="col-md-4" *ngIf="selectedFilter === 'pcp' || selectedFilter === 'ssnAndPcp'">
+      <input type="text" class="form-control" [(ngModel)]="pcpFilter" placeholder="Enter PCP" />
+    </div>
+    <div class="col-md-4" *ngIf="selectedFilter === 'ssnAndPcp'">
+      <input type="text" class="form-control" [(ngModel)]="ssnAndPcpFilter" placeholder="Enter SSN" />
+    </div>
+    <div class="col-md-4" *ngIf="selectedFilter === 'insuranceBySSN'">
+      <input type="text" class="form-control" [(ngModel)]="insuranceBySSNFilter" placeholder="Enter SSN for Insurance" />
+    </div>
+<!--    <div class="col-md-4">-->
+<!--      <button class="btn btn-primary" (click)="filterPatients()">Filter</button>-->
+<!--    </div>-->
+<!--    <div class="col-md-4">-->
+<!--      <button class="btn btn-primary" (click)="resetFilter()">Clear Filter</button>-->
+<!--    </div>-->
+  </div>
+  <div class="row mb-3">
+  <div class="col-md-4">
+    <button class="btn btn-primary" (click)="filterPatients()">Filter</button>
+  </div>
+  <div class="col-md-4">
+    <button class="btn btn-primary" (click)="resetFilter()">Clear Filter</button>
+  </div>
+  </div>
+
   <table class="table table-striped">
     <thead>
     <tr>
@@ -21,6 +54,7 @@
       <th>Phone</th>
       <th>Insurance ID</th>
       <th>PCP</th>
+      <th>Actions</th>
       <!-- Additional table headers for more patient details -->
     </tr>
     </thead>
@@ -32,6 +66,9 @@
       <td>{{ patient.phone }}</td>
       <td>{{ patient.insuranceid }}</td>
       <td>{{ patient.pcp }}</td>
+      <td>
+        <button class="btn btn-primary" (click)="editPatient(patient)">Edit</button>
+      </td>
       <!-- Additional table cells for more patient details -->
     </tr>
     </tbody>

@@ -1,1 +1,38 @@
-<p>create-physician works!</p>
+<div class="container">
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="display-5 text-center">Physician Registration</h3>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="physicianForm" (ngSubmit)="onSubmit()" autocomplete="off">
+            <div class="mb-3">
+              <label for="employeeid" class="form-label">Employee ID</label>
+              <input type="number" class="form-control" id="employeeid" formControlName="employeeid" />
+            </div>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" formControlName="name" />
+              <div *ngIf="physicianForm.get('name')?.invalid && (physicianForm.get('name')?.touched || submitted)" class="text-danger">
+                Name is required
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="position" class="form-label">Position</label>
+              <input type="text" class="form-control" id="position" formControlName="position" />
+            </div>
+            <div class="mb-3">
+              <label for="ssn" class="form-label">SSN</label>
+              <input type="number" class="form-control" id="ssn" formControlName="ssn" />
+            </div>
+            <div class="text-end">
+              <button type="submit" class="btn btn-success">Register</button>
+              <button type="reset" class="btn btn-danger ms-2" (click)="resetForm()">Reset</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

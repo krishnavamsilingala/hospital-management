@@ -1,0 +1,53 @@
+<div class="container mt-4">
+  <h2>View Physicians</h2>
+  <div class="row mb-3">
+    <div class="col-md-4">
+      <select class="form-select" [(ngModel)]="selectedFilter">
+        <option value="position">Filter by Position</option>
+        <option value="name">Filter by Name</option>
+        <option value="empId">Filter by Employee ID</option>
+        <!-- Add more filter options if needed -->
+      </select>
+    </div>
+    <div class="col-md-4" *ngIf="selectedFilter === 'position'">
+      <input type="text" class="form-control" [(ngModel)]="positionFilter" placeholder="Enter Position" />
+    </div>
+    <div class="col-md-4" *ngIf="selectedFilter === 'name'">
+      <input type="text" class="form-control" [(ngModel)]="nameFilter" placeholder="Enter Name" />
+    </div>
+    <div class="col-md-4" *ngIf="selectedFilter === 'empId'">
+      <input type="number" class="form-control" [(ngModel)]="empIdFilter" placeholder="Enter Employee ID" />
+    </div>
+    <!-- Add more filter input fields based on filter options -->
+    <div class="col-md-4">
+      <button class="btn btn-primary" (click)="filterPhysicians()">Filter</button>
+    </div>
+    <div class="col-md-4">
+      <button class="btn btn-primary" (click)="resetFilter()">Clear Filter</button>
+    </div>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Employee ID</th>
+      <th>Name</th>
+      <th>Position</th>
+      <th>SSN</th>
+      <!-- Additional table headers for more physician details -->
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let physician of physicians">
+      <td>{{ physician.employeeid }}</td>
+      <td>{{ physician.name }}</td>
+      <td>{{ physician.position }}</td>
+      <td>{{ physician.ssn }}</td>
+      <td>
+        <button class="btn btn-primary" (click)="editPhysician(physician)">Edit</button>
+      </td>
+      <!-- Additional table cells for more physician details -->
+    </tr>
+    </tbody>
+  </table>
+</div>
