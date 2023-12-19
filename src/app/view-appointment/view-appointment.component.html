@@ -1,0 +1,75 @@
+<div class="container mt-4">
+  <h2>View Appointments</h2>
+  <!-- Start Date Filter -->
+  <div class="row mb-3">
+    <div class="col-md-4">
+      <label for="startDate">Start Date:</label>
+      <input type="date" class="form-control" [(ngModel)]="selectedStartDate" name="startDate" />
+    </div>
+    <div class="col-md-4">
+      <button class="btn btn-primary" (click)="filterByStartDate()">Filter by Start Date</button>
+    </div>
+  </div>
+
+  <!-- Room Filter -->
+  <div class="row mb-3">
+    <div class="col-md-4">
+      <label for="roomId">Room ID:</label>
+      <input type="number" class="form-control" [(ngModel)]="selectedRoomId" name="roomId" />
+    </div>
+    <div class="col-md-4">
+      <button class="btn btn-primary" (click)="filterByRoomAndDate()">Filter by Room and Date</button>
+    </div>
+  </div>
+
+  <!-- Physician Filter -->
+  <div class="row mb-3">
+    <div class="col-md-4">
+      <label for="physicianId">Physician ID:</label>
+      <input type="number" class="form-control" [(ngModel)]="selectedPhysicianId" name="physicianId" />
+    </div>
+    <div class="col-md-4">
+      <button class="btn btn-primary" (click)="filterByPhysicianAndDate()">Filter by Physician and Date</button>
+    </div>
+  </div>
+
+  <!-- Patient Filter -->
+  <div class="row mb-3">
+    <div class="col-md-4">
+      <label for="patientId">Patient ID:</label>
+      <input type="number" class="form-control" [(ngModel)]="selectedPatientId" name="patientId" />
+    </div>
+    <div class="col-md-4">
+      <button class="btn btn-primary" (click)="filterPhysicianListByPatientId()">Filter Physicians by Patient ID</button>
+    </div>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Appointment ID</th>
+      <th>Patient ID</th>
+      <th>Prep Nurse ID</th>
+      <th>Physician ID</th>
+      <th>Start Date Time</th>
+      <th>End Date Time</th>
+      <th>Examination Room</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let appointment of appointments">
+      <td>{{ appointment.appointmentid }}</td>
+      <td>{{ appointment.patient }}</td>
+      <td>{{ appointment.prepnurse }}</td>
+      <td>{{ appointment.physician }}</td>
+      <td>{{ appointment.startDateTime | date:'medium' }}</td>
+      <td>{{ appointment.endDateTime | date:'medium' }}</td>
+      <td>{{ appointment.examinationroom }}</td>
+      <td>
+        <button class="btn btn-primary" (click)="editAppointment(appointment)">Edit</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

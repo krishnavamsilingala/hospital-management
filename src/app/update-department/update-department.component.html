@@ -1,0 +1,22 @@
+<!-- update-department.component.html -->
+
+<div class="container mt-4" *ngIf="department">
+  <h2>Update Department</h2>
+
+  <div class="mb-3">
+    <label for="deptId" class="form-label">Department ID</label>
+    <input type="text" class="form-control" id="deptId" [(ngModel)]="department.departmentid" disabled />
+  </div>
+
+  <div class="mb-3">
+    <label for="deptName" class="form-label">Department Name</label>
+    <input type="text" class="form-control" id="deptName" [(ngModel)]="department.name" />
+    <button class="btn btn-primary mt-3" (click)="updateName()">Update Name</button>
+  </div>
+
+  <div class="mb-3">
+    <label for="deptHead" class="form-label">Department Head</label>
+    <input type="text" class="form-control" id="deptHead" [(ngModel)]="department.head" />
+    <button class="btn btn-primary mt-3" (click)="updateHead()">Update Head</button>
+  </div>
+</div>

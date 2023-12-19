@@ -1,0 +1,22 @@
+<!-- create-department.component.html -->
+
+<div class="container mt-4">
+  <h2>Create Department</h2>
+
+  <div class="mb-3">
+    <label for="deptId" class="form-label">Department Id</label>
+    <input type="text" class="form-control" id="deptId" [(ngModel)]="department.departmentid" />
+  </div>
+
+  <div class="mb-3">
+    <label for="deptName" class="form-label">Department Name</label>
+    <input type="text" class="form-control" id="deptName" [(ngModel)]="department.name" />
+  </div>
+
+  <div class="mb-3">
+    <label for="deptHead" class="form-label">Department Head</label>
+    <input type="text" class="form-control" id="deptHead" [(ngModel)]="department.head" />
+  </div>
+
+  <button class="btn btn-primary" (click)="addDepartment()">Add Department</button>
+</div>
